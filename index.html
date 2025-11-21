@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>NEON TERRITORY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #05050a;
+        margin: 0;
+        overflow: hidden;
+        font-family: 'Orbitron', sans-serif;
+      }
+      /* CRT Scanline Effect */
+      .scanlines::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.25) 50%
+        );
+        background-size: 100% 4px;
+        z-index: 50;
+        pointer-events: none;
+      }
+      .scanlines::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(18, 16, 16, 0.1);
+        opacity: 0;
+        z-index: 50;
+        pointer-events: none;
+        animation: flicker 0.15s infinite;
+      }
+      @keyframes flicker {
+        0% { opacity: 0.027906; }
+        5% { opacity: 0.048949; }
+        10% { opacity: 0.024096; }
+        15% { opacity: 0.048053; }
+        20% { opacity: 0.015723; }
+        25% { opacity: 0.04729; }
+        30% { opacity: 0.03669; }
+        35% { opacity: 0.049478; }
+        40% { opacity: 0.008676; }
+        45% { opacity: 0.055146; }
+        50% { opacity: 0.016575; }
+        55% { opacity: 0.045475; }
+        60% { opacity: 0.013213; }
+        65% { opacity: 0.046583; }
+        70% { opacity: 0.007477; }
+        75% { opacity: 0.054477; }
+        80% { opacity: 0.016036; }
+        85% { opacity: 0.047042; }
+        90% { opacity: 0.008272; }
+        95% { opacity: 0.053362; }
+        100% { opacity: 0.025868; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
